@@ -23,7 +23,7 @@ FUNCTION Draw():
     DRAW top wall using "#" for WIDTH + 2 characters
     
     FOR each row from 0 to HEIGHT:
-        DRAW left wall "#"
+        DRAW left wall "|"
         
         FOR each column from 0 to WIDTH:
             IF current position is snake head THEN
