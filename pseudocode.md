@@ -37,7 +37,7 @@ FUNCTION Draw():
         
         DRAW right wall "|"
     
-    DRAW bottom wall using "#" for WIDTH + 2 characters
+    DRAW bottom wall using "_" for WIDTH + 2 characters
     DISPLAY score
 
 FUNCTION Input():
