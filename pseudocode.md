@@ -29,7 +29,7 @@ FUNCTION Draw():
             IF current position is snake head THEN
                 DRAW snake head "*"
             ELSE IF current position is fruit THEN
-                DRAW fruit "%"
+                DRAW fruit "o"
             ELSE IF current position is part of snake body THEN
                 DRAW snake body "*"
             ELSE
