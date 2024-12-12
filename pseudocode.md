@@ -35,7 +35,7 @@ FUNCTION Draw():
             ELSE
                 DRAW empty space " "
         
-        DRAW right wall "#"
+        DRAW right wall "|"
     
     DRAW bottom wall using "#" for WIDTH + 2 characters
     DISPLAY score
