@@ -2,7 +2,6 @@
 #include <cstdlib>
 #include <conio.h>
 #include<windows.h>
-#include <ctime>
 
 using namespace std;
 
@@ -35,7 +34,6 @@ int main()
 }
 void setup()
 {
-    srand(time(0)); // generate random number
     gameover = false;
     dir = STOP;
     x = width / 2;  //starting position at the centre
@@ -51,7 +49,7 @@ void draw()
     system("cls");  //clear screen
     for(int i = 0; i < width + 2; i++)  
     {
-        cout<<"_"; // for top wall
+        cout<<"_"; // For top wall
     }
     cout<<endl;
 
@@ -61,7 +59,7 @@ void draw()
         {
             if(j == 0)
             {
-                cout<<"|";  // left wall
+                cout<<"||";  // left wall
             }
             if(i == y && j == x)    //Determining the position of head
             {
@@ -90,7 +88,7 @@ void draw()
             }
             if (j == width - 1)
             {
-                cout << "|"; // right wall
+                cout << "||"; // right wall
             }
             
         }
@@ -99,7 +97,7 @@ void draw()
 
     for (int i = 0; i < width + 2; i++)
     {
-        cout << "_"; // for bottom wall
+        cout << "_"; // Bottom wall
     }
     cout << endl;
     cout << "Score: "<< score << endl; // display score
@@ -151,9 +149,22 @@ void logic()
     default: break;
     }
 
-    if (x >= width || x < 0|| y >= height || y < 0)
+    if (x >=width) 
     {
-        gameover = true;
+        x = 0;
+    }
+    else if (x < 0)
+    {
+        x = width - 1;
+    }
+
+    if(y >=height)
+    {
+        y = 0;
+    }
+    else if (y < 0)
+    {
+        y = height - 1;
     }
 
     for (int i = 0; i < ntail; i++)
@@ -170,7 +181,5 @@ void logic()
         fruitX = rand() % width; // new fruit on width 
         fruitY = rand() % height; // new fruit on height
         ntail++; // increse length of snake
-        tailX[ntail -1] = prevX;
-        taily[ntail - 1] = prevY;
     }
 }
